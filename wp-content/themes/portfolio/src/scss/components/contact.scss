@@ -1,0 +1,61 @@
+.contact-header {
+  @include section-headers;
+}
+
+.contact-text {
+  font-family: textFont;
+  font-size:18px;
+  text-align: center;
+  line-height:40px;
+
+  a {
+    text-decoration: none;
+    color:$gold;
+  }
+
+  @include phone {
+    padding:30px;
+    font-size:14px;
+  }
+}
+
+.contact-icon-wrapper {
+  width:25%;
+  margin: 50px auto 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom:50px;
+  max-width: 100%;
+
+  @include tablet-down {
+    width:80%;
+  }
+
+  a {
+    align-content: center;
+  }
+}
+
+.up-arrow {
+  margin-top:20px;
+  height:64px;
+
+  &:hover {
+    height:72px;
+  }
+}
+
+.contact-icons {
+  margin:0 auto;
+  padding:0;
+  width:48px;
+
+  @include tablet-down {
+    width:40px;
+  }
+
+  &:hover {
+    width:56px;
+  }
+}

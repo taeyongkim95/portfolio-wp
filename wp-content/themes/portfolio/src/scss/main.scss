@@ -1,0 +1,27 @@
+// SETTINGS
+@import 'settings/variables';
+@import 'settings/mixins';
+
+//OBJECTS
+@import 'objects/centerContainer';
+
+
+//COMPONENTS
+@import 'components/header';
+@import 'components/container';
+@import 'components/aboutme';
+@import 'components/work';
+@import 'components/contact';
+@import 'components/navbar';
+@import 'components/posts';
+
+// UTILITIES
+@import 'utilities/base-style';
+@import 'utilities/layoutAlignment';
+@import 'utilities/marginPadding';
+@import 'utilities/_outline-out.scss';
+
+@import 'vendor/slick.scss';
+@import 'vendor/slick-theme.scss';
+@import 'vendor/hamburger.scss';
+@import 'vendor/mmenu.scss';

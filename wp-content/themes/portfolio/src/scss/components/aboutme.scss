@@ -1,0 +1,134 @@
+.about-header {
+  @include section-headers;
+}
+
+.side-images {
+  border-radius: 10%;
+  height:200px;
+  width:200px;
+  float:left;
+  margin: 20px 30px 20px 0;
+  border: 3px $purple solid;
+
+  &:hover {
+    border: 3px $gold solid;
+  }
+
+  @include tablet-down {
+    height:150px;
+    width:150px;
+    margin:20px auto 0 auto;
+    position: relative;
+    display: block;
+    float:none;
+  }
+
+}
+
+.about-subheads {
+  @include section-subheads;
+}
+
+.about-text {
+  margin:0 auto;
+  font-family: textFont;
+  width:70%;
+  margin-left:240px;
+
+  .first-line {
+    font-size:26px;
+    line-height:38px;
+    font-style:italic;
+    font-weight:bolder;
+    color:white;
+    -webkit-text-stroke: 1px $gold;
+
+    @include tablet-down {
+      font-size:24px;
+      text-align: center;
+    }
+  }
+
+  p {
+    font-size:20px;
+    line-height:22px;
+
+    @include phone {
+      font-size:16px;
+      line-height:18px;
+    }
+  }
+
+  @include tablet-down {
+    margin-left:10px;
+    width:100%;
+  }
+}
+
+.block-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width:100%;
+
+  @include tablet-down {
+    width:100%;
+    display:block;
+  }
+}
+
+.creative-block {
+  @include special-blocks;
+}
+
+.creative {
+  @include special-images;
+  background-image: url("../../public/images/brain1.jpg");
+
+  &:hover {
+    background-image: url("../../public/images/brain2.jpg");
+  }
+
+  @include tablet-down {
+    background-image: url("../../public/images/brain_small.jpg");
+
+    &:hover {
+      background-image: url("../../public/images/brain_small_white.jpg")
+    }
+  }
+}
+
+.teamplayer-block {
+  @include special-blocks;
+}
+
+.teamplayer {
+  @include special-images;
+  background-image: url("../../public/images/teamwork1.png");
+
+  &:hover {
+    background-image: url("../../public/images/teamwork2.png");
+  }
+
+  @include tablet-down {
+    background-image: url("../../public/images/teamwork_small.png");
+
+    &:hover {
+      background-image: url("../../public/images/teamwork_small_white.png");
+    }
+  }
+}
+
+.skills-block {
+  @include special-blocks;
+}
+
+.skills {
+  @include special-images;
+  background-image: url("../../public/images/coding.png");
+
+  @include tablet-down {
+    background-image: url("../../public/images/coding_small.png");
+  }
+}

@@ -1,0 +1,113 @@
+#postContainer {
+  padding-top:50px;
+  margin:0 auto;
+  height:auto;
+  position: relative;
+  width:80%;
+  max-width: 100%;
+  font-family:textFont;
+  font-weight:400;
+
+  img {
+    max-width:80%;
+    height:auto;
+    position: relative;
+    display: block;
+    margin:10px auto;
+  }
+
+  blockquote {
+    background: #ddd;
+    padding:10px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size:44px;
+    font-family:headingFont;
+  }
+
+  h4 {
+    color:$gold;
+    font-size:22px;
+  }
+
+  h5 {
+    font-size:18px;
+  }
+}
+
+.verdict {
+  width:60%;
+  margin:20px auto;
+  display: block;
+  position: relative;
+  background:#18121E;
+  text-align: center;
+  padding:20px;
+
+  h1 {
+    margin-top:40px;
+    font-size:80px !important;
+    color:#fff;
+  }
+
+  h2 {
+    color:#fff;
+  }
+
+  @include tablet-down {
+    width:100%;
+  }
+}
+
+.best_scenes {
+  color:#fff;
+  font-size:20px;
+  margin-top:20px;
+}
+
+.grading_criteria {
+  border:2px solid #fff;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  color:#fff;
+}
+
+.criteria_left, .criteria_right {
+  flex-wrap:wrap;
+  display:flex;
+  width:50%;
+  border:1px solid #fff;
+
+  p {
+    text-align: center;
+    margin:0 auto;
+    font-size:32px;
+  }
+}
+
+.criteria_details {
+  width:100%;
+  flex-wrap:wrap;
+  display:flex;
+
+  p {
+    text-align: center;
+    margin:0 auto;
+    padding:20px 0;
+  }
+}
+
+.positive_negative {
+  color:#fff;
+  margin-top:20px;
+  
+  li {
+    list-style: none;
+    text-align: left;
+    font-size:22px;
+  }
+
+}

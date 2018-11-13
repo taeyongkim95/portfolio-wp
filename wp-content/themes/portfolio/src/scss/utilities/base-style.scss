@@ -1,0 +1,538 @@
+/* |  __ \|  ____| |/ // ____|_   _|   /\
+/* | |  | | |__  | ' /| (___   | |    /  \
+/* | |  | |  __| |  <  \___ \  | |   / /\ \
+/* | |__| | |____| . \ ____) |_| |_ / ____ \
+/* |_____/|______|_|\_\_____/|_____/_/    \_\
+
+/* http://patorjk.com/software/taag/#p=display&f=Big&t=DEKSIA */
+
+/* =============================== */
+/*   	 	     BASE STYLES	  	     */
+/*        https://deksia.com       */
+/*  Version 4.0  Updated 12/18/17  */
+/* =============================== */
+
+
+
+/* ================================================================== */
+/*  	This SCSS only contains base styles and helper classes		      */
+/*         There shouldn't be any reason to make edits here           */
+/*  Everything can be changed in the Theme Settings or in styles.css  */
+/* ================================================================== */
+
+
+.devBorder { border: 2px solid red; }
+
+
+/* ========================================================= */
+/*               	 Element & Class Defaults                */
+/* ========================================================= */
+
+.dividing-line {
+  width:80%;
+  margin:0 auto;
+  height:5px;
+  background-color: black;
+}
+
+@font-face {
+  font-family: textFont;
+  src: url("../../font/Futura.ttf");
+}
+
+@font-face {
+  font-family: headingFont;
+  src: url("../../font/koverwatch.ttf");
+}
+
+@font-face {
+  font-family: subFont;
+  src: url("../../font/bignoodletoo.ttf");
+}
+
+* {
+  transition: .2s all ease-out;
+}
+
+html,body { margin: 0; padding: 0; border: 0; }
+
+html {
+  -webkit-touch-callout:none;
+  -webkit-text-size-adjust:none;
+  -ms-text-size-adjust:100%;
+}
+
+body {
+  -webkit-font-smoothing:antialiased;
+  background-color:#fff;
+  font-family: headingFont;
+  color: #18121E;
+  background: url("../../public/images/background.jpg");
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-position: -400px 0;
+
+  @include tablet-down {
+    background: none;
+  }
+}
+
+img { max-width:100%; border: 0; }
+
+
+/* HTML5 Elements */
+
+article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section { display:block; }
+
+
+/** General Typography **/
+
+h1,h2,h3,h4,h5,h6,p { margin:0; padding:0; }
+
+
+/** Buttons & Forms **/
+
+select, input, textarea, button,.button {
+  padding: 8px;
+  height: auto;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ddd;
+  line-height: normal;
+  font-size: 1rem;
+}
+label {
+  padding:10px 0 5px;
+  line-height:normal;
+}
+
+.button, button, input[type="submit"] {
+  -webkit-appearance:none;
+  cursor:pointer;
+  text-decoration:none;
+  text-align:center;
+}
+.button.disabled, input[type="submit"].disabled {
+  background-color:#ccc !important;
+  border-color:#ccc !important;
+  color:#fff !important;
+  cursor:not-allowed;
+}
+
+input[type=password]:focus, input[type=telephone], input[type=text]:focus, input[type=search], input[type=number]:focus, input[type=email]:focus, textarea:focus {
+  outline:none;
+}
+select:focus, select.focus {
+  outline:none;
+}
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+input[type="number"] { max-width:65px; }
+
+
+/** Table Defaults **/
+table {
+  width:100%;
+  border-spacing: 0px;
+}
+
+
+/* ========================================================= */
+/*              Quick Styling / Helper Classes               */
+/* ========================================================= */
+
+ul.unstyled { list-style:none; }
+li.unstyled { list-style:none; }
+
+.unstyled a, a.unstyled { text-decoration:none; }
+.underline { text-decoration:underline; }
+.underlineHover:hover { text-decoration:underline; }
+
+.pointer { cursor:pointer; }
+
+
+/* ========================================================= */
+/*                          GRID SYSTEM                      */
+/* ========================================================= */
+
+/** Pixel Widths **/
+
+[class*='col-1-8'] { width: 12.5%; }
+[class*='col-1-6'] { width: 16.66%; }
+[class*='col-1-5'] { width: 20%; }
+[class*='col-1-4'] { width: 25%; }
+[class*='col-1-3'] { width: 33.33%; }
+[class*='col-3-8'] { width: 37.5%; }
+[class*='col-2-5'] { width: 40%; }
+[class*='col-1-2'] { width: 50%; }
+[class*='col-3-5'] { width: 60%; }
+[class*='col-5-8'] { width: 62.5%; }
+[class*='col-2-3'] { width: 66.66%; }
+[class*='col-3-4'] { width: 75%; }
+[class*='col-4-5'] { width: 80%; }
+[class*='col-5-6'] { width: 83.33%; }
+[class*='col-7-8'] { width: 87.5%; }
+
+[class*='max-1-8'] { max-width: 12.5%; }
+[class*='max-1-6'] { max-width: 16.66%; }
+[class*='max-1-5'] { max-width: 20%; }
+[class*='max-1-4'] { max-width: 25%; }
+[class*='max-1-3'] { max-width: 33.33%; }
+[class*='max-3-8'] { max-width: 37.5%; }
+[class*='max-2-5'] { max-width: 40%; }
+[class*='max-1-2'] { max-width: 50%; }
+[class*='max-3-5'] { max-width: 60%; }
+[class*='max-5-8'] { max-width: 62.5%; }
+[class*='max-2-3'] { max-width: 66.66%; }
+[class*='max-3-4'] { max-width: 75%; }
+[class*='max-4-5'] { max-width: 80%; }
+[class*='max-5-6'] { max-width: 83.33%; }
+[class*='max-7-8'] { max-width: 87.5%; }
+
+
+.fullwidth { width:100%; }
+
+.max-full { max-width:100%; }
+
+.fullheight { height:100%; }
+
+
+/* ========================================================= */
+/*                        RESPONSIVENESS                     */
+/* ========================================================= */
+
+[class*='display-'] { display:none; }
+[class*='display-'].inline { display:none; }
+[class*='display-'].inlineBlock { display:none; }
+
+
+/* Wide Desktop - Extra goodies for wide screen users */
+
+@include wide-desktop {
+
+  [class*='-wideDesktop'] { display:block; }
+  [class*='-wideDesktop'].inline { display:inline; }
+  [class*='-wideDesktop'].inlineBlock { display:inline-block; }
+
+}
+@include desktop {
+
+  [class*='-desktop'] { display:block; }
+  [class*='-desktop'].inline { display:inline; }
+  [class*='-desktop'].inlineBlock { display:inline-block; }
+
+}
+
+/* Slim Screen Below Standard Square Monitor */
+@include slim-desktop {
+
+  [class*='-slimScreen'] { display:block; }
+  [class*='-slimScreen'].inline { display:inline; }
+  [class*='-slimScreen'].inlineBlock { display:inline-block; }
+
+  .min-20 { min-width:100%; }
+}
+
+/* Tablet  */
+@include tablet {
+
+  [class*='-tablet'] { display:block; }
+  [class*='-tablet'].inline { display:inline; }
+  [class*='-tablet'].inlineBlock { display:inline-block; }
+
+  .centerOnMobile {
+    text-align:center;
+    display:block;
+    float:none;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .responsivePadding { padding-left:0; padding-right:0; }
+
+  .min-20 { min-width:100%; }
+
+  [class*='-respond'] { width:100%;max-width:100%; }
+
+
+  [class*='to-1-8'] { width: 12.5%; }
+  [class*='to-1-6'] { width: 16.66%; }
+  [class*='to-1-5'] { width:20%; }
+  [class*='to-1-4'] { width: 25%; }
+  [class*='to-3-8'] { width: 37.5%; }
+  [class*='to-1-3'] { width:33.33%; }
+  [class*='to-2-5'] { width:40%; }
+  [class*='to-1-2'] { width: 50%; }
+  [class*='to-3-5'] { width:60%; }
+  [class*='to-5-8'] { width: 62.5%; }
+  [class*='to-2-3'] { width: 66.66%; }
+  [class*='to-3-4'] { width:75%; }
+  [class*='to-4-5'] { width:80%; }
+  [class*='to-5-6'] { width:83.33%; }
+  [class*='to-7-8'] { width: 87.5%; }
+  [class*='to-full'] { width:100%; }
+
+
+
+}
+
+
+
+/* Mobile Portrait */
+@include phone {
+
+  [class*='-mobile'] { display:block; }
+  [class*='-mobile'].inline { display:inline; }
+  [class*='-mobile'].inlineBlock { display:inline-block; }
+
+  .centerOnMobile {
+    text-align:center;
+    float:none;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .responsivePadding { padding-left:0; padding-right:0; }
+
+  .min-20 { min-width:100%; }
+
+
+  [class*='-respond'] { width:100%;max-width:100%; }
+
+  [class*='to-1-8'] { width: 12.5%; }
+  [class*='to-1-6'] { width: 16.66%; }
+  [class*='to-1-5'] { width:20%; }
+  [class*='to-1-4'] { width: 25%; }
+  [class*='to-3-8'] { width: 37.5%; }
+  [class*='to-1-3'] { width:33.33%; }
+  [class*='to-2-5'] { width:40%; }
+  [class*='to-1-2'] { width: 50%; }
+  [class*='to-3-5'] { width:60%; }
+  [class*='to-5-8'] { width: 62.5%; }
+  [class*='to-2-3'] { width: 66.66%; }
+  [class*='to-3-4'] { width:75%; }
+  [class*='to-4-5'] { width:80%; }
+  [class*='to-5-6'] { width:83.33%; }
+  [class*='to-7-8'] { width: 87.5%; }
+  [class*='to-full'] { width:100%; }
+
+
+  [class*='then-1-8'] { width: 12.5%; }
+  [class*='then-1-6'] { width: 16.66%; }
+  [class*='then-1-5'] { width:20%; }
+  [class*='then-1-4'] { width: 25%; }
+  [class*='then-1-3'] { width:33.33%; }
+  [class*='then-3-8'] { width: 37.5%; }
+  [class*='then-2-5'] { width:40%; }
+  [class*='then-1-2'] { width: 50%; }
+  [class*='then-3-5'] { width:60%; }
+  [class*='then-5-8'] { width: 62.5%; }
+  [class*='then-2-3'] { width: 66.66%; }
+  [class*='then-3-4'] { width:75%; }
+  [class*='then-4-5'] { width:80%; }
+  [class*='then-5-6'] { width:83.33%; }
+  [class*='then-7-8'] { width: 87.5%; }
+  [class*='then-full'] { width:100%; }
+
+
+  .noMobile { display:none; }
+}
+
+
+
+
+/* ========================================================= */
+/*                Special Styling Class Defaults             */
+/* ========================================================= */
+
+.hidden {
+   opacity:0;
+}
+
+/*** HOVER CHILD ***/
+
+.toggleMyChild .hiddenChild {
+  display:none;
+}
+.fadeMyChild .hiddenChild {
+  opacity:0;
+  visibility:hidden;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+}
+
+
+/** Popup Styling **/
+
+.blackBack {
+  z-index:1500;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:none;
+}
+
+.popup {
+  z-index:1600;
+  overflow:auto;
+  position:absolute;
+  left:0;
+  top:0;
+  display:none;
+  background: #fff;
+  padding:20px;
+  max-width:100%;
+}
+a.closeX {
+  position:absolute;
+  top:0;
+  right:0;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+/*** Video Container ***/
+
+.videoContainer {
+	position: relative;
+	padding-bottom: 54.25%;
+	padding-top: 25px;
+	height: 0;
+}
+.videoContainer iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 450px;
+}
+
+iframe {
+  max-width:100%;
+  position:relative;
+  margin:0 auto;
+  display: block;
+  width:800px;
+  height:450px;
+
+  @include phone {
+    height:200px;
+  }
+}
+
+
+/** Form Styling **/
+
+.fullwidthForm select, .fullwidthForm input, .fullwidthForm textarea {
+  width:100%;
+  margin-bottom:5px;
+}
+.fullwidthForm input[type="submit"] {
+  width:auto;
+}
+.largeForm select, .largeForm input, .largeForm textarea, .largeForm button, .largeForm .button {
+  padding-top:12px;
+  padding-bottom:12px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.button.large, .input[type="submit"].large, .largeForm .button, .largeForm input[type="submit"] {
+  padding-left:20px;
+  padding-right:20px;
+}
+.largeForm label {
+  display:inline-block;
+  padding-top:5px;
+}
+.niceSelect {
+  border-radius:3px;
+  background:url(images/arrow-dark.png) right 10px center no-repeat;
+  -webkit-appearance: none;
+}
+
+
+/** Nice Table **/
+.niceTable table, table.niceTable {
+  border:1px solid #e8e8e8;
+}
+.niceTable thead {
+  width:100%;
+  background:#f5f5f5;
+}
+.niceTable thead th {
+  text-align:left;
+  padding:10px 5px;
+  font-weight:normal;
+}
+.niceTable tbody, .niceTable tfoot {
+  background:#fff;
+}
+.niceTable tbody td {
+  padding:17px 5px;
+  border-bottom:1px solid #e8e8e8;
+}
+
+.niceTable tfoot td {
+  padding:2px 5px;
+
+}
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.6.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2018 Daniel Eden
+ */
+
+.animated {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated2 {
+  -webkit-animation-duration: 9s;
+  animation-duration: 9s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+//////HOVER///////

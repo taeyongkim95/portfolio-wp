@@ -1,0 +1,144 @@
+/* MIXIN for media queries */
+/* use: @include tablet {} */
+$phone-width: 600px;
+$tablet-width: 850px;
+$slim-desktop-width: 1000px;
+$desktop-width: 1024px;
+$wide-desktop-width: 1350px;
+
+
+@mixin phone {
+  @media only screen and (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+@mixin tablet-down {
+  @media only screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$phone-width + 1px }) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin slim-desktop {
+  @media (min-width: #{$tablet-width + 1px }) and (max-width: #{$slim-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$slim-desktop-width + 1px }) and (max-width: #{$wide-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin wide-desktop {
+  @media only screen and (min-width: #{$wide-desktop-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: #{$tablet-width + 1px }) and (max-width: #{$wide-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin section-headers {
+  font-size: 70px;
+  line-height: 110px;
+  margin-bottom:0;
+  font-family: subFont;
+  text-align: center;
+
+  &:hover {
+    color:$gold;
+  }
+
+  @include tablet-down {
+    font-size:48px;
+  }
+}
+
+@mixin section-subheads {
+  margin:0 auto;
+  font-size: 38px;
+  // line-height:50px;
+  width:40%;
+  border-bottom: 3px $gold solid;
+  margin-top:20px;
+
+  &:hover {
+    color:$purple;
+  }
+
+  @include tablet-down {
+    text-align: center;
+    line-height: 50px;
+    font-size:32px;
+
+  }
+}
+
+@mixin special-blocks {
+  margin-top:80px;
+  width:230px;
+  padding: 5px;
+
+  h2 {
+    font-size:30px;
+    text-align:center;
+    line-height:70px;
+
+    @include phone {
+      font-size:24px;
+      margin:0 10px 0 10px;
+    }
+  }
+
+  p {
+    font-size:20px;
+    font-family: textFont;
+    word-wrap: break-word;
+    text-align: center;
+
+    @include tablet-down {
+      font-size:16px;
+    }
+
+    @include phone {
+      font-size: 16px;
+    }
+  }
+
+  @include tablet-down {
+    width:150px;
+  }
+
+  @include phone {
+    width: 100%;
+    margin-top:40px;
+  }
+}
+
+@mixin special-images {
+  margin-left:15px;
+  border: 3px black solid;
+  border-radius: 50%;
+  width:215px;
+  height:220px;
+
+  @include tablet-down {
+    width:100px;
+    height:105px;
+    margin-left:25px;
+  }
+
+  @include phone {
+    margin:0 auto;
+  }
+}

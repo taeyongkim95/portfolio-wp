@@ -1,0 +1,80 @@
+.work-header {
+  @include section-headers;
+}
+
+.work-images {
+  width:800px;
+  position:relative;
+  max-width:100%;
+  margin:0 auto;
+  display:block;
+  border:3px solid $purple;
+}
+
+.work-image-tiles {
+  width:390px;
+}
+
+.work-block {
+  width:80%;
+  margin:20px auto 0 auto;
+  position: relative;
+  padding:40px;
+  display: block;
+  text-align: center;
+  h2 {
+    font-size:32px;
+    line-height:60px;
+    display: inline;
+  }
+
+  @include phone {
+    padding-top:30px;
+    border-top:2px dotted $gold;
+  }
+
+  p {
+    font-size:22px;
+    font-family: textFont;
+    font-weight:200;
+    a {
+      color:$gold;
+      text-decoration:none;
+    }
+
+    a:hover {
+      color:$purple;
+    }
+
+    @include phone {
+      font-size:16px;
+    }
+
+  }
+
+  .skillsets {
+    font-size:16px;
+
+    @include phone {
+      font-size:12px;
+    }
+  }
+
+  .github-logo {
+    display:inline;
+    height:60px;
+    width:60px;
+    padding:15px;
+    margin:0 auto;
+  }
+
+  .github-black {
+    width:24px;
+    position: relative;
+    margin:0 auto;
+  }
+}
+
+.lb-data .lb-caption {
+  font-size:28px;
+}
